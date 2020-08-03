@@ -1,0 +1,51 @@
+Anitha asked to make a kabbadi game points recorder, where that recorder should have operations like,
+Given a list of strings, each string can be one of the 4 following types:
+Integer (one round's score): Directly represents the number of points you get in this round.
+"+" (one round's score): Represents that the points you get in this round are the sum of the last two valid round's points.
+"D" (one round's score): Represents that the points you get in this round are the doubled data of the last valid round's points.
+"C" (an operation, which isn't a round's score): Represents the last valid round's points you get were invalid and should be removed.
+Each round's operation is permanent and could have an impact on the round before and the round after.
+anitha's Machine need to return the sum of the points that player could get in all the rounds.
+
+Input Description:
+List of string of scores in each round
+
+Output description:
+the sum of the points that player could get in all the rounds
+
+Sample Input:
+10 3 C D +
+
+Sample Output:
+60
+
+Explanation:
+First round = 10 -> sum is 10
+second round = 3 -> sum is 10+3=13
+third round =C round 2's data was invalid -> Sum is 10
+fourth round = D you will get 20 points (second round data removed) sum->20+10=30
+fifth round = + (last rwo round's sum + sum) -> 10(third) + 20(fourth)=30 + 30(sum) =60
+
+Sample Input:
+2 4 3 C +
+
+Sample Output:
+12
+
+Sample Input:
+22 C 33 D 4
+
+Sample Output:
+103
+
+Sample Input:
+9 4 C D C
+
+Sample Output:
+9
+
+Sample Input:
+23 D 15 C +
+
+Sample Output:
+138
